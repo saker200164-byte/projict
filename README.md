@@ -2,6 +2,8 @@
 
 > خادم MCP (Model Context Protocol) لتوليد الصور والفيديو بالذكاء الاصطناعي ودمج عدة مقاطع في فيديو واحد — مع لوحة إدارة عربية RTL وواجهة برمجية لدمج الفيديو.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsaker200164-byte%2Fprojict&env=TURSO_DATABASE_URL,TURSO_AUTH_TOKEN&envDescription=Turso%20database%20URL%20and%20auth%20token&project-name=mcp-media-generator&repository-name=mcp-media-generator)
+
 ## المميزات
 
 - **5 أدوات MCP** على المسار `/mcp`:
