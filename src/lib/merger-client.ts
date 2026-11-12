@@ -194,11 +194,14 @@ export async function refreshMergeTask(taskId: string) {
   return getTask(taskId);
 }
 
-/** يحوّل المسار النسبي إلى رابط مطلق — يستخدم NEXT_PUBLIC_SITE_URL أو VERCEL_URL. */
+/** يحوّل المسار النسبي إلى رابط مطلق — يفضّل النطاق الإنتاجي العام على نطاق النشر الفريد المحمي بـ SSO. */
 function absoluteUrl(path: string): string {
   if (/^https?:\/\//i.test(path)) return path;
   const base =
     process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "") ||
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "");
   if (base) {
     const b = base.replace(/\/$/, "");
